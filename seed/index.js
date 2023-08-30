@@ -32,7 +32,7 @@ const seed = async () => {
 		// make sure all the promise are resolved
 		//await Promise.all(userPromises);
 
-		// User table must be created before the Job table
+		// User table must be created before the Product table
 		const productPromises = products.map(product => Products.create(product));
 		await Promise.all(productPromises);
 

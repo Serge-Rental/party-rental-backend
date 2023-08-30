@@ -6,6 +6,7 @@ const sequelize = require("./util/database");
 const User = require("./models/user");
 const Products = require("./models/products");
 const PORT = process.env.PORT || 3005;
+const cors = require('cors') 
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -17,11 +18,7 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_TEST);
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: false }));
 
-app.use((req, res, next) => {
-  res.set('Access-Control-Allow-Origin', 'http://127.0.0.1:5173');
-  res.set("Access-Conrol-Allow-Origin", "GET, POST, PUT, DELETE");
-  next();
-});
+app.use(cors());
 
 //test route
 app.get("/", (req, res, next) => {

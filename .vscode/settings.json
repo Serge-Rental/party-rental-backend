@@ -5,10 +5,10 @@
             "server": "localhost",
             "port": 5432,
             "driver": "PostgreSQL",
-            "name": "partyeventrentals",
+            "name": "postgres",
             "database": "partyeventrentals",
             "username": "postgres",
-            "password": "postgres1"
+            "password": "postgres"
         }
     ]
 }
